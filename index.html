@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.72.0">
+    <title>Ferit Akdemir · SMS OYUNU</title>
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js" defer></script>
+    <!-- <link rel="icon" href="fotolar/icon.jpg" type="image/x-icon"> -->
+    <link rel="icon" href="fotolar/icon2.jpg" type="image/x-icon">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ferit Akdemir</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Hakkımda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sms">SMS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">İletişim Bilgileri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <!-- <h1>Merhaba, Ben Emre Göksu</h1> -->
+            <h1 class="emre-goksu">Emre Göksu</h1>
+            <p class="typewriter-text"></p>
+        </div>
+    </section>
+    <section id="about">
+        <div class="about-container">
+            <div class="about-card">
+                <div class="about-card-content">
+                    <h1>Merhaba, Ben Emre Göksu</h1>
+                    <p>2005 doğumluyum ve Mersin şehrinde yaşıyorum. Teknoloji ve yazılıma olan ilgim, çocukluğumdan beri beni yönlendiriyor. Bilgisayarlarla ilk tanışmamla birlikte bu tutkumun peşinden gitmeye karar verdim.</p>
+                    <p>Python ve JavaScript gibi dillerle çalışarak, hem web hem de mobil projeler geliştirdim. Bu projelerde edindiğim deneyim, farklı problemleri çözme yeteneğimi geliştirmemi sağladı. Teknolojinin sınırlarını zorlamayı seviyorum ve her
+                        yeni projede daha fazla öğreniyorum.</p>
+                    <p>İletişim ve işbirliği benim için önemli. Fikir alışverişi yapmayı, projelerde ekip olarak çalışmayı seviyorum. Eğer bir projede işbirliği yapmak, fikirlerimizi paylaşmak veya sadece sohbet etmek isterseniz, lütfen iletişime geçmekten
+                        çekinmeyin.
+                    </p>
+                    <a href="fotolar/my-cv.pdf" download class="btn btn3">CV'yi İndir</a>
+                </div>
+                <div class="about-image">
+                    <img src="fotolar/emre.jpg" alt="Profil Resmi">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container" id="sms">
+        <h2><span class="typed-text"></span></h2>
+        <form action="main.php" method="GET" class="sms-form">
+            <label for="gsm" title="Lütfen geçerli bir GSM numarası girin.">GSM Numarası:</label>
+            <input type="text" title="Lütfen geçerli bir GSM numarası girin." id="gsm" name="gsm" required>
+            <label for="adet" title="Mesajın kaç adet gönderileceğini belirtin.">Adet Sayısı:</label>
+            <input type="number" title="Mesajın kaç adet gönderileceğini belirtin." id="adet" name="adet" required>
+            <button class="sms-button" type="submit" title="Lütfen oyunu başlatmak için butona basın.">Gönder</button>
+        </form>
+        <div class="result">
+            <?php
+                if (isset($_GET['gsm'])) {
+                    include 'main.php';
+                }
+                ?>
+        </div>
+    </div>
+    <section id="contact">
+        <div class="contact-info">
+            <h2>İletişim Bilgileri</h2>
+            <ul class="contact-list">
+                <li><i class="fas fa-envelope"></i> Email: akdemirferit608@gmail.com</li>
+                <li><i class="fas fa-phone"></i> Telefon: (+90)530-833-80-99</li>
+                <li><i class="fas fa-map-marker-alt"></i> Adres: Mersin, Türkiye</li>
+            </ul>
+        </div>
+    </section>
+    <div class="zaman-container">
+        <div id="zaman"></div>
+    </div>
+    <div class="fixed-element social-icons ">
+        <a href="#" target="_blank" class="grow-and-hover"><i class="fab fa-facebook-f "></i></a>
+        <a href="#" target="_blank" class="grow-and-hover"><i class="fab fa-twitter "></i></a>
+        <a href="https://instagram.com/ferit22901" target="_blank" class="grow-and-hover"><i class="fab fa-instagram "></i></a>
+        <a href="#" target="_blank" class="grow-and-hover"><i class="fab fa-linkedin-in "></i></a>
+        <a href="#" target="_blank" class="grow-and-hover"><i class="fab fa-youtube "></i></a>
+        <a href="#" target="_blank" class="grow-and-hover"><i class="fab fa-reddit "></i></a>
+        <a href="https://github.com/Memati8383" target="_blank" class="grow-and-hover"><i class="fab fa-github "></i></a>
+        <!-- Daha fazla sosyal medya simgesi ekleyebilirsiniz -->
+    </div>
+</body>
+
+</html>
